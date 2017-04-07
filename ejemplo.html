@@ -7,11 +7,15 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Bootstrap 101 Template</title>
 
-    <!-- Bootstrap -->
+     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
+	
+	<!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 	
 	<!-- Estilos Propios -->
 	<link href="csspropios/estilo1.css" rel="stylesheet">
+	
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -76,18 +80,65 @@
 </nav>
     <div class="row">
 		<div class="col-md-2">
+		<!--
 			<ul class="nav nav-stackable">
-				<li role="presentation" class="active"><a href="#">Home</a></li>
-				<li role="presentation"><a href="#">Profile</a></li>
-				<li role="presentation"><a href="#">Messages</a></li>
+				<li role="presentation" class="active"><a href="#">Modelos</a></li>
+				<li role="presentation">-->
+				<div ><div id="accordion">
+  <h3>Modelos</h3>
+  <div>
+    <p>
+    Aca van los modelos
+    </p>
+  </div>
+  <h3>Lentes</h3>
+  <div>
+    <p>
+     Aca van los lentes
+    </p>
+  </div>
+  <h3>Marcos</h3>
+  <div>
+    <p>
+     Aca van los marcos
+    </p>
+  </div>
+  <h3>Patillas</h3>
+  <div>
+     <p>
+     Aca van los patillas
+    </p>
+  </div>
+  <h3>Tamaño</h3>
+  <div>
+     <p>
+     Aca van los tamaños
+    </p>
+  </div>
+</div></div><!--</li>
+				<li role="presentation"><a href="#">Patillas</a></li>
 			</ul>
+		-->
 		</div>
-		<div class="col-md-9">.col-md-1</div>
-</div>
+		
+		<div class="col-md-9">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu tincidunt enim. Aenean rutrum iaculis tempus. Donec sit amet erat consectetur, auctor est sit amet, tincidunt erat. Pellentesque sagittis lorem nec ante sollicitudin, non efficitur ipsum vehicula. Quisque pretium ligula at auctor commodo. Nullam pulvinar, mi sit amet maximus scelerisque, orci neque cursus nibh, ac lacinia ante purus eget elit. In leo mi, varius id feugiat id, tincidunt eu sapien. Aliquam laoreet, sem non luctus imperdiet, arcu justo sodales magna, non efficitur urna lectus vitae sem. Vestibulum metus dui, volutpat id lacus non, egestas facilisis massa. Nunc eleifend interdum faucibus. Aliquam laoreet elit ultrices erat bibendum, non semper nisl aliquet. Sed scelerisque velit dolor, placerat porttitor lacus dapibus in.
+		</div>
+		
+
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+	  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+ <script>
+  $( function() {
+    $( "#accordion" ).accordion({
+      collapsible: true
+    });
+  } );
+  </script>
   </body>
 </html>
