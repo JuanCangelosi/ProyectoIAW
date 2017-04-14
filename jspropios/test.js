@@ -1,4 +1,4 @@
-$("#mod_OriginalWayfarer").click(mostrarImagen);
+$(".btnmodelo").click(mostrarImagen);
 
 //$("#btnLenteRojo").click(lenteRojo);
 
@@ -32,29 +32,28 @@ function armar(lente_grafico){
 	//		Creamos path del maco
 	var p_front= document.createElementNS(svgNS,"path");
 	p_front.setAttributeNS(null,"id","front");
-	p_front.setAttributeNS(null,"fill","black");
+	p_front.setAttributeNS(null,"class",lente_grafico.marco.color);
 	p_front.setAttributeNS(null,"d",lente_grafico.marco.forma);
 
 	document.getElementById("GlassesSVG").appendChild(p_front);
 }
 
+/*
+    Recibe el evento y en base a este obtiene el id del boton presionado, con eso carga el json correspondiente para armar el lente
+*/
 function mostrarImagen(e){
+    
+    var lente=e.currentTarget.id;
 
-    $.getJSON("jspropios/lenteGrafico.json", function(json) {
-        console.log(json); 
-        // this will show the info it in firebug console
+    var myjson =$.getJSON("jspropios/"+lente+".json", function(json) {
+        
         var lente_grafico=json.lente_grafico;
         
         armar(lente_grafico);
-        console.log(lente_grafico);
+        
+        
     });
     
-    //var lente_grafico=myjson.lente_grafico;
-    //console.log(lente_grafico);
-    
-    
-	
-
 
 
 	//		Muestra en consola(para ver si anda	).
@@ -75,4 +74,12 @@ function mostrarImagen(e){
 
 function chngClscLns(color){
     $("#lns").attr('class', color);
+}
+
+function chngFront(color){
+    $("#front").attr('class', color);
+}
+
+function chngPatillas(color){
+    $("#temples").attr('class', color);
 }
