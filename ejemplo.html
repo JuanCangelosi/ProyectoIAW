@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Caniex™ Anteojos</title>
-
+	<link rel="shortcut icon" type="images/Caniexlogo.png" href="images/Caniexlogo.png" />
      <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	<!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
 	
@@ -27,17 +27,12 @@
     <![endif]-->
   </head>
   <body>
-  <nav class="navbar navbar-default navbar-static-top">
+  <nav class="navbar navbar-default navbar-static-top" id="navbar">
   <div class="container-fluid">
+  
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">Caniex</a>
+      <a class="navbar-brand" href="#"><img src="images/Caniexlogo.png" id="logo" alt="logotipo Caniex"></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -46,7 +41,9 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Precargados <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
+            
+			<!-- Aca irian precargados -->
+			<li><a href="#">Action</a></li>
             <li><a href="#">Another action</a></li>
             <li><a href="#">Something else here</a></li>
             <li role="separator" class="divider"></li>
@@ -63,9 +60,9 @@
   </div><!-- /.container-fluid -->
 </nav>
 
-	<!--	Comienza fila de edicion, que contien en una columna la tabla de edicion, y en la segunda column la tabla
+	<!--	Comienza panel de , que contien en una columna la tabla de edicion, y en la segunda column la tabla
 		de muestreo-->
-	<div class="row" style="background-color:gray;">
+	<div class="row" id="panel_edicion">
 	
 	<!--	Comienza fila de edicion, que contien en una columna la tabla de edicion	-->
 	
@@ -79,13 +76,12 @@
 		  <h3>Modelos</h3>
 		  <div>
 			<p id="mostrarModelo">
-				<img src="muestra_modelos/MinOriginalwayfarer.jpg" alt="Imagen de muestra de anteojos Original Wayfarer" width="166" height="108" id="mod_OriginalWayfarer">
+				<img src="images/muestra_modelos/MinOriginalwayfarer.jpg" alt="Imagen de muestra de anteojos Original Wayfarer" width="166" height="108" id="mod_OriginalWayfarer">
 			</p>
 		  </div>
 		  <h3>Lentes</h3>
 		  <div>
 			<p>
-			 Aca van los lentes
 				<button class="btn btn-primary btn-sm" onclick="chngClscLns('st4')">Rojo</button>
 				<button class="btn btn-primary btn-sm" onclick="chngClscLns('st5')">Verde</button>
 				<button class="btn btn-primary btn-sm" onclick="chngClscLns('st6')">Azul</button>
