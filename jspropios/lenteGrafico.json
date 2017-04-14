@@ -1,0 +1,6 @@
+"lente_grafico"={
+    "marco"={"forma"="", "color"=""};
+    "vidrios"=[{"forma"="", "color"= ""},{"forma"="", "color"= ""}];
+    "patillas"=[{"forma"="", "color"=""},{"forma"="", "color"= ""}];
+    
+}
