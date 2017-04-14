@@ -40,21 +40,15 @@ function armar(lente_grafico){
 
 function mostrarImagen(e){
 
-    $.getJSON("jspropios/lenteGrafico.json", function(json) {
-        console.log(json); 
-        // this will show the info it in firebug console
-        var lente_grafico=json.lente_grafico;
+    var myjson =$.getJSON("jspropios/lenteGrafico.json", function(json) {
+        
+        var lente_grafico=json.mod_OriginalWayfarer;
         
         armar(lente_grafico);
-        console.log(lente_grafico);
+        
+        
     });
     
-    //var lente_grafico=myjson.lente_grafico;
-    //console.log(lente_grafico);
-    
-    
-	
-
 
 
 	//		Muestra en consola(para ver si anda	).
