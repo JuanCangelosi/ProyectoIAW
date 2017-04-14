@@ -1,6 +1,16 @@
-.st1{fill:#f7573c;}
-.st2{fill:#76AADB;}
-.st3{fill:#000000;}
-.st4{fill:#FF0000;}
-.st5{fill:#00FF00;}
-.st6{fill:#0000FF;}
+.lenteNaranja{fill:#f7573c;
+    opacity: 0.7;}
+.lenteCeleste{fill:#76AADB;
+        opacity: 0.7;}
+.lenteNegro{fill:#000000;
+    opacity: 0.7;}
+.lenteRojo{fill:#FF0000;
+    opacity: 0.7;}
+.lenteVerde{fill:#00FF00;
+opacity: 0.7;}
+.lenteAzul{fill:#0000FF;
+opacity: 0.7;}
+
+.marcoNegro{fill:#000000;}
+
+.patillaNegra{fill:#000000;}
