@@ -15,6 +15,7 @@
 	
 	<!-- Estilos Propios -->
 	<link id="cssPropio" href="csspropios/bootstrap1.css" rel="stylesheet">
+	<link id="cssPropio" href="csspropios/estilo.css" rel="stylesheet">
     <link id="cssPropio" href="csspropios/estilo1.css" rel="stylesheet">
 	
 
@@ -61,76 +62,101 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-    <div class="row">
-		<div class="col-md-2">
+
+	<!--	Comienza fila de edicion, que contien en una columna la tabla de edicion, y en la segunda column la tabla
+		de muestreo-->
+	<div class="row" style="background-color:gray;">
+	
+	<!--	Comienza fila de edicion, que contien en una columna la tabla de edicion	-->
+	
+		<div class="col-md-2" id="table_acc">
 		<!--
 			<ul class="nav nav-stackable">
 				<li role="presentation" class="active"><a href="#">Modelos</a></li>
 				<li role="presentation">-->
-				<div ><div id="accordion">
-  <h3>Modelos</h3>
-  <div>
-    <p id="mostrarModelo">
-		<img src="muestra_modelos/MinOriginalwayfarer.jpg" alt="Imagen de muestra de anteojos Original Wayfarer" width="166" height="108" id="mod_OriginalWayfarer">
-    </p>
-  </div>
-  <h3>Lentes</h3>
-  <div>
-    <p>
-     Aca van los lentes
-        <button id="btnLenteRojo" class="btn btn-primary btn-sm">Rojo</button>
-        <button class="btn btn-primary btn-sm">Verde</button>
-        <button class="btn btn-primary btn-sm">Azul</button>
-        <button class="btn btn-primary btn-sm">Negro</button>
-    </p>
-  </div>
-  <h3>Marcos</h3>
-  <div>
-    <p>
-     Aca van los marcos
-    </p>
-  </div>
-  <h3>Patillas</h3>
-  <div>
-     <p>
-     Aca van los patillas
-    </p>
-  </div>
-  <h3>Tamaño</h3>
-  <div>
-     <p>
-     Aca van los tamaños
-    </p>
-  </div>
-</div></div><!--</li>
-				<li role="presentation"><a href="#">Patillas</a></li>
-			</ul>
-		-->
+		<div><div id="accordion" >
+	  
+		  <h3>Modelos</h3>
+		  <div>
+			<p id="mostrarModelo">
+				<img src="muestra_modelos/MinOriginalwayfarer.jpg" alt="Imagen de muestra de anteojos Original Wayfarer" width="166" height="108" id="mod_OriginalWayfarer">
+			</p>
+		  </div>
+		  <h3>Lentes</h3>
+		  <div>
+			<p>
+			 Aca van los lentes
+				<button id="btnLenteRojo" class="btn btn-primary btn-sm">Rojo</button>
+				<button class="btn btn-primary btn-sm">Verde</button>
+				<button class="btn btn-primary btn-sm">Azul</button>
+				<button class="btn btn-primary btn-sm">Negro</button>
+			</p>
+		  </div>
+		  <h3>Marcos</h3>
+		  <div>
+			<p>
+			 Aca van los marcos
+			</p>
+		  </div>
+		  <h3>Patillas</h3>
+		  <div>
+			 <p>
+			 Aca van los patillas
+			</p>
+		  </div>
+		  <h3>Tamaño</h3>
+		  <div>
+			 <p>
+			 Aca van los tamaños
+			</p>
+		  </div>
+		</div></div><!--</li>
+					<li role="presentation"><a href="#">Patillas</a></li>
+				</ul>
+			-->
 		</div>
-        
-        
-		
-		<div class="col-md-9">
-            <div class="col-md-5">
-                <h3 id="display_nombre">Nombre del lente</h3>
-            </div>
-            <div class="col-md-4">
-                <p id="detalle">Detalle</p>
-            </div>
-            
-			<svg version="1.1" id="GlassesSVG" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-				viewBox="0 0 768 384" style="enable-background:new 0 0 768 384;" xml:space="preserve">
-			</svg>
-            
-            <div class="col-md-5">
-                <p id="display_nombre">Guardar</p>
-            </div>
-            <div class="col-md-4">
-                <p id="detalle">Descargar</p>
-            </div>
-		</div>
-		
 
+		<!--	termina columna acordeon	-->
+		<!--	comienza columna de muestreo	-->
+		
+		<div class="col-md-9" id="columna2">
+			<div class="row">
+				<div class="col-md-6" style="background-color:lightcyan;">
+					<p id="display_nombre">Nombre del lente</p>
+				</div>
+				<div class="col-md-6" style="background-color:blue;">
+					<p id="display_detalle">Detalle</p>
+				</div>
+			</div>
+			
+			<div class="row" id="display_anteojos">
+				<svg version="1.1" id="GlassesSVG" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+					viewBox="0 0 768 384" style="enable-background:new 0 0 768 384;" xml:space="preserve">
+				</svg> 
+			</div>
+			
+			<div class="row">
+				<div class="col-md-3" style="background-color:lightcyan;">
+					<p id="display_load">Cargar</p>
+				</div>
+				<div class="col-md-3" style="background-color:lightblue;">
+					<p id="display_save">Guardar</p>
+				</div>
+				<div class="col-md-3" style="background-color:blue;">
+					<p id="display_download">Descargar</p>
+				</div>
+			</div>	
+		</div>
+		
+		<!--	termina columna de muestreo	-->
+  </div>
+  
+	<!--	termina Fila de edicion	-->
+	
+	<div class="col-md-6 col-md-offset-2" style="background-color:green;">
+	<br><br>Quienes somos(EN PROCESO)<br><br>
+	</div>
+	
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
