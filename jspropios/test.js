@@ -1,6 +1,6 @@
 $("#mod_OriginalWayfarer").click(mostrarImagen);
 
-$("#btnLenteRojo").click(lenteRojo);
+
 
 function mostrarImagen(e){
 	var svgNS = "http://www.w3.org/2000/svg";
@@ -68,8 +68,8 @@ function mostrarImagen(e){
 	
 }
 
-function lenteRojo(e){
-    $("#lns_l").attr('class','st1');
-     $("#lns_r").attr('class','st1');
+function chngClscLns(color){
+    $("#lns_l").attr('class', color);
+     $("#lns_r").attr('class', color);
     //$("#lens_l").setAttributeNS(null,"class","st1");;
 }
