@@ -1,4 +1,4 @@
-$("#mod_OriginalWayfarer").click(mostrarImagen);
+$(".btnmodelo").click(mostrarImagen);
 
 //$("#btnLenteRojo").click(lenteRojo);
 
@@ -38,11 +38,16 @@ function armar(lente_grafico){
 	document.getElementById("GlassesSVG").appendChild(p_front);
 }
 
+/*
+    Recibe el evento y en base a este obtiene el id del boton presionado, con eso carga el json correspondiente para armar el lente
+*/
 function mostrarImagen(e){
+    
+    var lente=e.currentTarget.id;
 
-    var myjson =$.getJSON("jspropios/lenteGrafico.json", function(json) {
+    var myjson =$.getJSON("jspropios/"+lente+".json", function(json) {
         
-        var lente_grafico=json.mod_OriginalWayfarer;
+        var lente_grafico=json.lente_grafico;
         
         armar(lente_grafico);
         
