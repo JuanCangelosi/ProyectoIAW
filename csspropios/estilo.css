@@ -44,16 +44,39 @@
 	color:	white;
 	
 }
+
+.caret-right {
+	  display: inline-block;
+	  width: 0;
+	  height: 0;
+	  margin-left: 2px;
+	  vertical-align: middle;
+	  border-left: 5px solid;
+	  border-left-color:#FFFFFF;
+	  border-bottom: 5px solid transparent;
+	  border-top: 5px solid transparent;
+}
+
 #accordion h3{
 	font-family:"Mohave";
-	font-size: 24px;
+	font-size: 28px;
 	background-color:#2A2A2A;
+	padding:15px 15px 15px 15px;
+}
+
+#tab { 
+	   display:inline-block; 
+       margin-left: 35px; 
+	   margin-right: 10px;
 }
 
 #accordion h3:hover{
 	 background-color: #DE1B1B;
-	 color:white;
 
+}
+
+#accordion h3:a{
+	  background-color: blue;
 }
 
 
