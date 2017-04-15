@@ -77,18 +77,23 @@
 			<ul class="nav nav-stackable">
 				<li role="presentation" class="active"><a href="#">Modelos</a></li>
 				<li role="presentation">-->
-		<div><div id="accordion" >
+            
+        <!-- Menu de seleccion de objetos, cada h3 es un colapsible que uestra el div inmediatamente debajo -->
+        <div><div id="accordion" >
 
-		  <h3>Modelos</h3>
-		  <div>
-			<p id="mostrarModelo">
-				<img src="images/muestra_modelos/MinOriginalwayfarer.jpg" alt="Imagen de muestra de anteojos Original Wayfarer" width="166" height="108" id="mod_OriginalWayfarer">
-				<img src="images/muestra_modelos/MinClubmaster.jpg" alt="Imagen de muestra de anteojos ClubMaster" width="166" height="108" id="lenteGrafico" class="btnmodelo">
+            <!-- Menu de seleccion de modelos-->
+		  <h3 data-toggle="collapse" href="#collapseModelo" aria-expanded="false" aria-controls="collapseModelo">Modelos</h3>
+		  <div class="collapse" id="collapseModelo">
+			<p id="mostrarModelo" >
+				<img src="images/muestra_modelos/MinOriginalwayfarer.jpg" alt="Imagen de muestra de anteojos Original Wayfarer" width="166" height="108" id="wayfarerGrafico" class="btnmodelo">
+				<img src="images/muestra_modelos/MinClubmaster.jpg" alt="Imagen de muestra de anteojos ClubMaster" width="166" height="108" id="clubMasterGrafico" class="btnmodelo">
                 <button class="btnmodelo" id="aviatorGrafico">Aviator</button>
 			</p>
 		  </div>
-		  <h3>Lentes</h3>
-		  <div>
+            
+            <!-- Menu de seleccion de vidrios (lentes)-->
+		  <h3 data-toggle="collapse" href="#collapseLentes" aria-expanded="false" aria-controls="collapseLentes">Lentes</h3>
+		  <div class="collapse" id="collapseLentes">
 			<p>
 				<button class="btn btn-primary btn-sm" onclick="chngClscLns('lenteRojo')">Rojo</button>
 				<button class="btn btn-primary btn-sm" onclick="chngClscLns('lenteVerde')">Verde</button>
@@ -96,28 +101,31 @@
 				<button class="btn btn-primary btn-sm" onclick="chngClscLns('lenteNegro')">Negro</button>
 			</p>
 		  </div>
-		  <h3>Marcos</h3>
-		  <div>
+            
+            <!-- Menu de seleccion de marcos -->
+		  <h3 data-toggle="collapse" href="#collapseMarcos" aria-expanded="false" aria-controls="collapseMarcos">Marcos</h3>
+		  <div class="collapse" id="collapseMarcos">
 			<p>
 			 Aca van los marcos
 			</p>
 		  </div>
-		  <h3>Patillas</h3>
-		  <div>
+            
+            <!-- Menu de seleccion de patillas-->
+		  <h3 data-toggle="collapse" href="#collapsePatillas" aria-expanded="false" aria-controls="collapsePatillas">Patillas</h3>
+		  <div class="collapse" id="collapsePatillas">
 			 <p>
 			 Aca van los patillas
 			</p>
 		  </div>
-		  <h3>Tamaño</h3>
-		  <div>
+            
+            <!-- Menu de seleccion de tamaños-->
+		  <h3 data-toggle="collapse" href="#collapseTamanos" aria-expanded="false" aria-controls="collapseTamanos">Tamaño</h3>
+		  <div class="collapse" id="collapseTamanos">
 			 <p>
 			 Aca van los tamaños
 			</p>
 		  </div>
-		</div></div><!--</li>
-					<li role="presentation"><a href="#">Patillas</a></li>
-				</ul>
-			-->
+		</div></div>
 		</div>
 
 		<!--	termina columna acordeon	-->
@@ -165,7 +173,7 @@
 	<script src="jspropios/test.js"></script>
     <script src="jspropios/cambiarTema.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <!-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
  <script>
   $( function() {
     $( "#accordion" ).accordion({
