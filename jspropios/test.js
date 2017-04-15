@@ -49,11 +49,12 @@ function mostrarImagen(e){
         var lente_grafico=json.lente_grafico;
         
         armar(lente_grafico);
+        //cargarOpciones(lente);
         
         
     });
     
-
+   
 
 	//		Muestra en consola(para ver si anda	).
 	//console.log(document.getElementById("GlassesSVG"));
@@ -63,6 +64,47 @@ function mostrarImagen(e){
 	
 }
 
+function habilitarOpciones(lente){
+    
+    
+}
+
+function cargarModelos(e){
+   
+     var myjson =$.getJSON("jspropios/caracteristicas.json", function(json) {
+        
+        var modelo=json.modelo;
+        
+         for (i=0, len=modelo.length; i<len ; i++){
+             cargarModelo(modelo[i]);
+         }
+         
+         var vidrios=json.vidrio;
+         for (i=0, len=vidrios.length; i<len ; i++){
+             cargarVidrio(modelo[i]);
+         }
+        
+         var marcos=json.marco;
+         for (i=0, len=marcos.length; i<len ; i++){
+             cargarVidrio(marcos[i]);
+         }
+         
+        var patillas=json.patillas;
+         for (i=0, len=vidrio.length; i<len ; i++){
+             cargarPatillas(patillas[i]);
+         }
+         
+          var tamano=json.tamano;
+         for (i=0, len=tamano.length; i<len ; i++){
+             cargarTamano(tamano[i]);
+         }
+    });
+        
+}
+
+function cargarModelo(modelo){
+    $("#mostrarModelo").append('<img src="images/muestra_modelos/'+modelo+'.jpg" alt="Imagen de muestra de anteojos'+modelo+'" width="166" height="108" id="'modelo'Grafico" class="btnmodelo">');    
+}
 /*function lenteRojo(e){
     
     $("#lns").attr('class','st1');
