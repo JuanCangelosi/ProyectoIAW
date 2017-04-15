@@ -40,13 +40,13 @@ function armar(lente_grafico){
 /*
     Recibe el evento y en base a este obtiene el id del boton presionado, con eso carga el json correspondiente para armar el lente
 */
-function mostrarImagen(e){
+function modeloSeleccionado(e){
     
     console.log("Entre a mostrar la img");
    
     var lente=e.currentTarget.id;
     console.log(lente);
-    var myjson =$.getJSON("jspropios/"+lente+".json", function(json) {
+    var myjson =$.getJSON("jspropios/"+lente+"Grafico.json", function(json) {
         
         var lente_grafico=json.lente_grafico;
         
@@ -54,11 +54,9 @@ function mostrarImagen(e){
         
         armar(lente_grafico);
         //habilitarOpciones(lente);
-        
-        
+        $("#display_nombreElegido").remove();
+        $("#display_nombre").append('<span id="display_nombreElegido">'+lente+'</span>');
     });
-    
-   
 
 	//		Muestra en consola(para ver si anda	).
 	//console.log(document.getElementById("GlassesSVG"));
@@ -117,7 +115,7 @@ function cargarModelos(){
 }
 
 function cargarModelo(modelo){
-    var htmlACargar='<img src="images/muestra_modelos/min'+modelo.modelo+'.jpg" alt="Imagen de muestra de anteojos '+modelo.modelo+'" width="150" height="108" id="'+modelo.modelo+'Grafico" class="btnmodelo">';
+    var htmlACargar='<img src="images/muestra_modelos/min'+modelo.modelo+'.jpg" alt="Imagen de muestra de anteojos '+modelo.modelo+'" width="150" height="108" id="'+modelo.modelo+'" class="btnmodelo">';
     $("#mostrarModelo").append(htmlACargar);    
 }
 
