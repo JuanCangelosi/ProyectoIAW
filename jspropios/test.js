@@ -44,7 +44,7 @@ function mostrarImagen(e){
    
     var lente=e.currentTarget.id;
 
-    var myjson =$.getJSON("jspropios/"+lente+".json", function(json) {
+    var myjson =$.getJSON("jspropios/"+lente+"Grafico.json", function(json) {
         
         var lente_grafico=json.lente_grafico;
         
@@ -73,15 +73,15 @@ function cargarModelos(e){
    
      var myjson =$.getJSON("jspropios/caracteristicas.json", function(json) {
         
-        var modelo=json.modelo;
+        var modelos=json.modelo;
         
          for (i=0, len=modelo.length; i<len ; i++){
-             cargarModelo(modelo[i]);
+             cargarModelo(modelos[i]);
          }
          
          var vidrios=json.vidrio;
          for (i=0, len=vidrios.length; i<len ; i++){
-             cargarVidrio(modelo[i]);
+             cargarVidrio(vidrios[i]);
          }
         
          var marcos=json.marco;
@@ -103,7 +103,8 @@ function cargarModelos(e){
 }
 
 function cargarModelo(modelo){
-    $("#mostrarModelo").append('<img src="images/muestra_modelos/'+modelo+'.jpg" alt="Imagen de muestra de anteojos'+modelo+'" width="166" height="108" id="'modelo'Grafico" class="btnmodelo">');    
+    var htmlACargar='<img src="images/muestra_modelos/min'+modelo+'.jpg" alt="Imagen de muestra de anteojos'+modelo+'" width="166" height="108" id="'+modelo+'Grafico" class="btnmodelo">';
+    $("#mostrarModelo").append(htmlACargar);    
 }
 /*function lenteRojo(e){
     
