@@ -81,6 +81,8 @@ function cargarModelos(){
          //si logre entrar
          
          //cargo los modelos de lentes
+         var i=0;
+         var len=0;
         var modelos=json.modelo;
          for (i=0, len=modelos.length; i<len ; i++){
              cargarModelo(modelos[i]);
@@ -120,15 +122,34 @@ function cargarModelo(modelo){
 }
 
 function cargarVidrio(vidrio){
-    $("#mostrarLente").append("<p> hola </p>");
+    $("#mostrarLentes").append("<p> "+vidrio.tipo+" </p>");
+    var colores=vidrio.color;
+    var coloresAcargar="<p>";
+    for(i=0, len=colores.length; i<len; i++){
+        coloresAcargar=coloresAcargar+colores[i];
+    }
+    coloresAcargar=coloresAcargar+"</p>"
+     $("#mostrarLentes").append(coloresAcargar);
 }
 
 function cargarMarco(marco){
-     $("#mostrarMarco").append("<p> hola </p>");
+    var colores=marco.color;
+    var coloresAcargar="<p>";
+    for(i=0, len=colores.length; i<len; i++){
+        coloresAcargar=coloresAcargar+colores[i];
+    }
+    coloresAcargar=coloresAcargar+"</p>"
+     $("#mostrarMarcos").append(coloresAcargar);
 }
 
 function cargarPatillas(patilla){
-     $("#mostrarPatilla").append("<p> hola </p>");
+    var colores=patilla.color;
+    var coloresAcargar="<p>";
+    for(i=0, len=colores.length; i<len; i++){
+        coloresAcargar=coloresAcargar+colores[i];
+    }
+    coloresAcargar=coloresAcargar+"</p>"
+     $("#mostrarPatillas").append(coloresAcargar);
 }
 
 function cargarTamano(tamano){
@@ -152,4 +173,5 @@ function chngFront(color){
 
 function chngPatillas(color){
     $("#temples").attr('class', color);
+    
 }
