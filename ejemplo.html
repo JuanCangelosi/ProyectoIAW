@@ -83,16 +83,17 @@
 		  
 		  <div class="collapse" id="collapseModelo">
 			<p id="mostrarModelo" >
-				<img src="images/muestra_modelos/MinOriginal_Wayfarer.jpg" alt="Imagen de muestra de anteojos Original Wayfarer" width="150" height="108" id="Original_Wayfarer" class="btnmodelo">
+				<!-- <img src="images/muestra_modelos/MinOriginal_Wayfarer.jpg" alt="Imagen de muestra de anteojos Original Wayfarer" width="150" height="108" id="Original_Wayfarer" class="btnmodelo">
 				<img src="images/muestra_modelos/MinClubmaster.jpg" alt="Imagen de muestra de anteojos ClubMaster" width="150" height="108" id="Clubmaster" class="btnmodelo">
                 <img src="images/muestra_modelos/MinAviator.jpg" alt="Imagen de muestra de anteojos aviator" width="150" height="108" id="Aviator" class="btnmodelo">
+                -->
 			</p>
 		  </div>
             
             <!-- Menu de seleccion de vidrios (lentes)-->
 		  <h3 data-toggle="collapse" href="#collapseLentes" aria-expanded="false" aria-controls="collapseLentes"><span class="caret-right" id="tab"></span> Lentes </h3>
 		  <div class="collapse" id="collapseLentes">
-			<p>
+			<p id="mostrarLentes">
 				<button class="btn btn-primary btn-sm" onclick="chngClscLns('lenteRojo')">Rojo</button>
 				<button class="btn btn-primary btn-sm" onclick="chngClscLns('lenteVerde')">Verde</button>
 				<button class="btn btn-primary btn-sm" onclick="chngClscLns('lenteAzul')">Azul</button>
@@ -103,7 +104,7 @@
             <!-- Menu de seleccion de marcos -->
 		  <h3 data-toggle="collapse" href="#collapseMarcos" aria-expanded="false" aria-controls="collapseMarcos"><span class="caret-right" id="tab"></span>Marcos</h3>
 		  <div class="collapse" id="collapseMarcos">
-			<p>
+			<p id="mostrarMarcos">
 			 Aca van los marcos
 			</p>
 		  </div>
@@ -111,7 +112,7 @@
             <!-- Menu de seleccion de patillas-->
 		  <h3 data-toggle="collapse" href="#collapsePatillas" aria-expanded="false" aria-controls="collapsePatillas"><span class="caret-right" id="tab"></span>Patillas</h3>
 		  <div class="collapse" id="collapsePatillas">
-			 <p>
+			 <p id="mostrarPatillas">
 			 Aca van los patillas
 			</p>
 		  </div>
@@ -119,7 +120,7 @@
             <!-- Menu de seleccion de tamaños-->
 		  <h3 data-toggle="collapse" href="#collapseTamanos" aria-expanded="false" aria-controls="collapseTamanos"><span class="caret-right" id="tab"></span>Tamaño</h3>
 		  <div class="collapse" id="collapseTamanos">
-			 <p>
+			 <p id="mostrarTamano">
 			 Aca van los tamaños
 			</p>
 		  </div>
@@ -168,7 +169,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-	<script src="jspropios/test.js"></script>
+      <script src="jspropios/controller.js"></script>
+      <script src="jspropios/listeners.js"></script>
     <script src="jspropios/cambiarTema.js"></script>
    
 

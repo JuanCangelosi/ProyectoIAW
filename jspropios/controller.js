@@ -1,6 +1,6 @@
-$(".btnmodelo").click(mostrarImagen);
+//$(".btnmodelo").click(mostrarImagen);
 
-//$("#btnLenteRojo").click(lenteRojo);
+//$(".btnLente").click();
 
 function armar(lente_grafico){ 
     $("#GlassesSVG").remove();
@@ -41,15 +41,19 @@ function armar(lente_grafico){
     Recibe el evento y en base a este obtiene el id del boton presionado, con eso carga el json correspondiente para armar el lente
 */
 function mostrarImagen(e){
+    
+    console.log("Entre a mostrar la img");
    
     var lente=e.currentTarget.id;
-
-    var myjson =$.getJSON("jspropios/"+lente+"Grafico.json", function(json) {
+    console.log(lente);
+    var myjson =$.getJSON("jspropios/"+lente+".json", function(json) {
         
         var lente_grafico=json.lente_grafico;
         
+        console.log(lente_grafico);
+        
         armar(lente_grafico);
-        //cargarOpciones(lente);
+        //habilitarOpciones(lente);
         
         
     });
@@ -69,42 +73,68 @@ function habilitarOpciones(lente){
     
 }
 
-function cargarModelos(e){
+function cargarModelos(){
+    
+    //accedo a al json que posee los elemento a cargar en el html
    
      var myjson =$.getJSON("jspropios/caracteristicas.json", function(json) {
         
+          console.log(json);
+         //si logre entrar
+         
+         //cargo los modelos de lentes
         var modelos=json.modelo;
-        
-         for (i=0, len=modelo.length; i<len ; i++){
+         for (i=0, len=modelos.length; i<len ; i++){
              cargarModelo(modelos[i]);
          }
          
+         //cargo los posibles colores de vidrio
          var vidrios=json.vidrio;
          for (i=0, len=vidrios.length; i<len ; i++){
              cargarVidrio(vidrios[i]);
          }
         
+         //cargo los posibles colores de marco
          var marcos=json.marco;
          for (i=0, len=marcos.length; i<len ; i++){
-             cargarVidrio(marcos[i]);
+             cargarMarco(marcos[i]);
          }
          
+         //cargo los posibles colores de patilla
         var patillas=json.patillas;
-         for (i=0, len=vidrio.length; i<len ; i++){
+         for (i=0, len=patillas.length; i<len ; i++){
              cargarPatillas(patillas[i]);
          }
          
+         //cargo los posibles tamaños
           var tamano=json.tamano;
          for (i=0, len=tamano.length; i<len ; i++){
              cargarTamano(tamano[i]);
          }
+         
     });
         
 }
 
 function cargarModelo(modelo){
-    var htmlACargar='<img src="images/muestra_modelos/min'+modelo+'.jpg" alt="Imagen de muestra de anteojos'+modelo+'" width="166" height="108" id="'+modelo+'Grafico" class="btnmodelo">';
+    var htmlACargar='<img src="images/muestra_modelos/min'+modelo.modelo+'.jpg" alt="Imagen de muestra de anteojos '+modelo.modelo+'" width="150" height="108" id="'+modelo.modelo+'Grafico" class="btnmodelo">';
     $("#mostrarModelo").append(htmlACargar);    
+}
+
+function cargarVidrio(vidrio){
+    $("#mostrarLente").append("<p> hola </p>");
+}
+
+function cargarMarco(marco){
+     $("#mostrarMarco").append("<p> hola </p>");
+}
+
+function cargarPatillas(patilla){
+     $("#mostrarPatilla").append("<p> hola </p>");
+}
+
+function cargarTamano(tamano){
+    
 }
 /*function lenteRojo(e){
     
