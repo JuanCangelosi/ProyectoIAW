@@ -1,3 +1,10 @@
+@font-face{
+    font-family: 'Mohave';
+    font-style: normal;
+    font-weight: normal;
+    src: local("Mohave"), url('../fonts/Mohave.otf') format("truetype");
+}
+
 #logo{
 	width:	187px;
     height: 95px;
@@ -13,10 +20,40 @@
 	padding-top:0px;
 }
 
+
 .navbar-brand,
 .navbar-nav li a {
+	font-family: "Mohave";
     line-height: 85px;
 	font-size: 25px;
+	word-spacing: 8px;
+}
+
+#hdr_container {
+	line-height:50px;
+	background-color:#2A2A2A;
+}
+
+#hdr_container h3{
+	line-height:50px;
+	font-family:"Mohave";
+	text-align: center;
+	font-size:	60px;
+	word-spacing: 8px;
+	margin-top:	7px;
+	color:	white;
+	
+}
+#accordion h3{
+	font-family:"Mohave";
+	font-size: 24px;
+	background-color:#2A2A2A;
+}
+
+#accordion h3:hover{
+	 background-color: #DE1B1B;
+	 color:white;
+
 }
 
 
@@ -24,14 +61,47 @@
 	background-color:#FFFFFF;
 	/*background-color:#726958*/
 	margin:auto;
+	font-family:"Mohave";
+	font-size: 28px;
 }
+
+#col_display_nombre{
+	background-color:#FDF3E7;
+}
+#display_nombre{
+	margin-top:10px;
+}
+
+#display_nombreElegido{
+	color:red;
+	display:inline;
+}
+
+.btn, .btn-primary{
+	font-size: 28px;
+}
+
+#btn_load{
+	background-color: #006231;
+}
+
+#btn_load hover{
+	background-color: #006231;
+}
+
+#btn_download{
+	background-color: #f44336;
+}
+
+
 
 #table_acc{
 	margin: auto;
 }
 
+
 #display_anteojos{
-	background:	white;
+	background:	#E8E8E8;
 	width:	768px;
     height: 384px;
 }

@@ -60,6 +60,12 @@
   </div><!-- /.container-fluid -->
 </nav>
 
+
+<div class="container-fluid" id="hdr_container">
+  <h3>Personaliza tus anteojos online!</h3>
+</div>
+<br>
+
 	<!--	Comienza panel de , que contien en una columna la tabla de edicion, y en la segunda column la tabla
 		de muestreo-->
 	<div class="row" id="panel_edicion">
@@ -72,20 +78,18 @@
 				<li role="presentation" class="active"><a href="#">Modelos</a></li>
 				<li role="presentation">-->
 		<div><div id="accordion" >
-	  
+
 		  <h3>Modelos</h3>
 		  <div>
 			<p id="mostrarModelo">
 				<img src="images/muestra_modelos/MinOriginalwayfarer.jpg" alt="Imagen de muestra de anteojos Original Wayfarer" width="166" height="108" id="mod_OriginalWayfarer">
-				<img src="muestra_modelos/MinOriginalwayfarer.jpg" alt="Imagen de muestra de anteojos Original Wayfarer" width="166" height="108" id="lenteGrafico" class="btnmodelo">
+				<img src="images/muestra_modelos/MinClubmaster.jpg" alt="Imagen de muestra de anteojos ClubMaster" width="166" height="108" id="lenteGrafico" class="btnmodelo">
                 <button class="btnmodelo" id="aviatorGrafico">Aviator</button>
 			</p>
 		  </div>
 		  <h3>Lentes</h3>
 		  <div>
 			<p>
-
-			 Aca van los lentes
 				<button class="btn btn-primary btn-sm" onclick="chngClscLns('lenteRojo')">Rojo</button>
 				<button class="btn btn-primary btn-sm" onclick="chngClscLns('lenteVerde')">Verde</button>
 				<button class="btn btn-primary btn-sm" onclick="chngClscLns('lenteAzul')">Azul</button>
@@ -121,11 +125,10 @@
 		
 		<div class="col-md-9" id="columna2">
 			<div class="row">
-				<div class="col-md-6" style="background-color:lightcyan;">
-					<p id="display_nombre">Nombre del lente</p>
+				<div class="col-md-5" id="col_display_nombre">
+					<p id="display_nombre">Modelo: <span id="display_nombreElegido"></span></p>
 				</div>
-				<div class="col-md-6" style="background-color:blue;">
-					<p id="display_detalle">Detalle</p>
+				<div class="col-md-2 btn btn-primary">Detalle
 				</div>
 			</div>
 			
@@ -136,14 +139,11 @@
 			</div>
 			
 			<div class="row">
-				<div class="col-md-3" style="background-color:lightcyan;">
-					<p id="display_load">Cargar</p>
+				<div class="col-md-2 btn btn-primary" id="btn_load">Cargar
 				</div>
-				<div class="col-md-3" style="background-color:lightblue;">
-					<p id="display_save">Guardar</p>
+				<div class="col-md-2 btn btn-primary" id="btn_save">Guardar
 				</div>
-				<div class="col-md-3" style="background-color:blue;">
-					<p id="display_download">Descargar</p>
+				<div class="col-md-2 btn btn-primary" id="btn_download">Descargar
 				</div>
 			</div>	
 		</div>
@@ -172,6 +172,7 @@
       collapsible: true
     });
   } );
+ 
   </script>
   </body>
 </html>

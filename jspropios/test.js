@@ -2,8 +2,7 @@ $(".btnmodelo").click(mostrarImagen);
 
 //$("#btnLenteRojo").click(lenteRojo);
 
-function armar(lente_grafico){
-    
+function armar(lente_grafico){ 
     $("#GlassesSVG").remove();
     $("#display_anteojos").append('<svg version="1.1" id="GlassesSVG" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 768 384" style="enable-background:new 0 0 768 384;" xml:space="preserve"> </svg> ')
     
@@ -42,7 +41,7 @@ function armar(lente_grafico){
     Recibe el evento y en base a este obtiene el id del boton presionado, con eso carga el json correspondiente para armar el lente
 */
 function mostrarImagen(e){
-    
+   
     var lente=e.currentTarget.id;
 
     var myjson =$.getJSON("jspropios/"+lente+".json", function(json) {
