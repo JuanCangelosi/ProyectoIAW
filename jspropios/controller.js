@@ -83,7 +83,7 @@ function cargarModelos(){
          //cargo los modelos de lentes
          var i=0;
          var len=0;
-        var modelos=json.modelo;
+         var modelos=json.modelo;
          for (i=0, len=modelos.length; i<len ; i++){
              cargarModelo(modelos[i]);
          }
@@ -92,7 +92,7 @@ function cargarModelos(){
          var vidrios=json.vidrio;
          for (i=0, len=vidrios.length; i<len ; i++){
              cargarVidrio(vidrios[i]);
-         }
+		}
         
          //cargo los posibles colores de marco
          var marcos=json.marco;
@@ -125,8 +125,11 @@ function cargarVidrio(vidrio){
     $("#mostrarLentes").append("<p> "+vidrio.tipo+" </p>");
     var colores=vidrio.color;
     var coloresAcargar="<p>";
+	var sheet = window.document.styleSheets[3]; // para cargar el st al css de estilos
     for(i=0, len=colores.length; i<len; i++){
-        coloresAcargar=coloresAcargar+colores[i];
+		var str= "&#39;"+"st"+i+"&#39;";	// por las cmillas del onclick
+        coloresAcargar+=' <button class="btn btn-sm" id=btnClr onclick="chngClscLns('+str+')" style="background-color:#'+colores[i]+';"></button>';
+		sheet.insertRule('.st'+i+' { fill: #'+colores[i]+'; opacity: 0.6; }', sheet.cssRules.length);
     }
     coloresAcargar=coloresAcargar+"</p>"
      $("#mostrarLentes").append(coloresAcargar);
@@ -164,7 +167,7 @@ function cargarTamano(tamano){
 }*/
 
 function chngClscLns(color){
-    $("#lns").attr('class', color);
+	$("#lns").attr('class', color);
 }
 
 function chngFront(color){

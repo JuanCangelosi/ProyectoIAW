@@ -104,6 +104,11 @@
 	font-size: 28px;
 }
 
+#btn-Clr{
+	padding:10px 10px;
+	background-color: pink;
+}
+
 #btn_load{
 	background-color: #006231;
 }

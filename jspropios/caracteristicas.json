@@ -42,9 +42,10 @@
 	"vidrio": [{
 			"tipo": "classic",
 			"color": [
-				"verde",
-				"azul",
-				"negro"
+				"000000",
+				"FF0000",
+				"00FF00",
+				"0000FF"
 			],
 			"precio": "100"
 		},
