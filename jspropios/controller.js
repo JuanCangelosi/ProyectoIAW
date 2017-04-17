@@ -144,7 +144,7 @@ function cargarMarco(marco){
     for(i=0, len=colores.length; i<len; i++){
 		var str= "&#39;"+"stm"+i+"&#39;";	// por las cmillas del onclick
         coloresAcargar+=' <button class="btn btn-sm" id=btnClr onclick="chngFront('+str+')" style="background-color:#'+colores[i]+';"></button>';
-		sheet.insertRule('.stm'+i+' { fill: #'+colores[i]+'; opacity: 0.8; }', sheet.cssRules.length);
+		sheet.insertRule('.stm'+i+' { fill: #'+colores[i]+'; opacity: 1; }', sheet.cssRules.length);
     }
     coloresAcargar=coloresAcargar+"</p>"
      $("#mostrarMarcos").append(coloresAcargar);
@@ -157,13 +157,15 @@ function cargarPatillas(patilla){
     for(i=0, len=colores.length; i<len; i++){
         var str= "&#39;"+"stp"+i+"&#39;";	// por las cmillas del onclick
         coloresAcargar+=' <button class="btn btn-sm" id=btnClr onclick="chngPatillas('+str+')" style="background-color:#'+colores[i]+';"></button>';
-		sheet.insertRule('.stp'+i+' { fill: #'+colores[i]+'; opacity: 0.8; }', sheet.cssRules.length);
+		sheet.insertRule('.stp'+i+' { fill: #'+colores[i]+'; opacity: 1; }', sheet.cssRules.length);
     }
     coloresAcargar=coloresAcargar+"</p>"
      $("#mostrarPatillas").append(coloresAcargar);
 }
 
 function cargarTamano(tamano){
+     var tamanosAcargar='<button class="btn btn-sm" id=btnClr>' + tamano.medida+ '</button>';
+    $("#mostrarTamano").append(tamanosAcargar);
     
 }
 /*function lenteRojo(e){
