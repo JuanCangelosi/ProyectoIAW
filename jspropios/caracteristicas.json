@@ -92,9 +92,23 @@
 				"trendy"
 			],
 			"color": [
-				"rojo",
-				"negro",
-				"blanco"
+				"000000",
+				"f44336",
+				"e91e63",
+				"9c27b0",
+				"0000FF",
+				"673ab7",
+				"3f51b5",
+				"2196f3",
+				"cddc39",
+				"ffeb3b",
+				"ffc107",
+				"ff9800",
+				"ff5722",
+				"795548",
+				"9e9e9e",
+				"607d8b",
+				"FFFFFF"
 			],
 			"precio": "50"
 		}
@@ -117,9 +131,21 @@
 			"trendy"
 		],
 		"color": [
-			"rojo",
-			"negro",
-			"blanco"
+			"000000",
+			"9c27b0",
+			"0000FF",
+			"673ab7",
+			"3f51b5",
+			"2196f3",
+			"03a9f4",
+			"00bcd4",
+			"009688",
+			"4caf50",
+			"8bc34a",
+			"cddc39",
+			"ffeb3b",
+			"ffc107",
+			"FFFFFF"
 		],
 		"precio": "50",
 		"grabado": [{
