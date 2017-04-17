@@ -56,6 +56,8 @@ function modeloSeleccionado(e){
         //habilitarOpciones(lente);
         $("#display_nombreElegido").remove();
         $("#display_nombre").append('<span id="display_nombreElegido">'+lente+'</span>');
+		chngClscLns('st0');
+		
     });
 
 	//		Muestra en consola(para ver si anda	).
