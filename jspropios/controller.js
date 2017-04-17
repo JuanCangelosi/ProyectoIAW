@@ -56,7 +56,7 @@ function modeloSeleccionado(e){
         //habilitarOpciones(lente);
         $("#display_nombreElegido").remove();
         $("#display_nombre").append('<span id="display_nombreElegido">'+lente+'</span>');
-		chngClscLns('st0');
+		chngClscLns('stv0');
 		
     });
 
@@ -129,9 +129,9 @@ function cargarVidrio(vidrio){
     var coloresAcargar="<p>";
 	var sheet = window.document.styleSheets[3]; // para cargar el st al css de estilos
     for(i=0, len=colores.length; i<len; i++){
-		var str= "&#39;"+"st"+i+"&#39;";	// por las cmillas del onclick
+		var str= "&#39;"+"stv"+i+"&#39;";	// por las cmillas del onclick
         coloresAcargar+=' <button class="btn btn-sm" id=btnClr onclick="chngClscLns('+str+')" style="background-color:#'+colores[i]+';"></button>';
-		sheet.insertRule('.st'+i+' { fill: #'+colores[i]+'; opacity: 0.6; }', sheet.cssRules.length);
+		sheet.insertRule('.stv'+i+' { fill: #'+colores[i]+'; opacity: 0.8; }', sheet.cssRules.length);
     }
     coloresAcargar=coloresAcargar+"</p>"
      $("#mostrarLentes").append(coloresAcargar);
@@ -142,9 +142,9 @@ function cargarMarco(marco){
     var coloresAcargar="<p>";
 	var sheet = window.document.styleSheets[3]; // para cargar el st al css de estilos
     for(i=0, len=colores.length; i<len; i++){
-		var str= "&#39;"+"st"+i+"&#39;";	// por las cmillas del onclick
+		var str= "&#39;"+"stm"+i+"&#39;";	// por las cmillas del onclick
         coloresAcargar+=' <button class="btn btn-sm" id=btnClr onclick="chngFront('+str+')" style="background-color:#'+colores[i]+';"></button>';
-		sheet.insertRule('.st'+i+' { fill: #'+colores[i]+'; opacity: 0.6; }', sheet.cssRules.length);
+		sheet.insertRule('.stm'+i+' { fill: #'+colores[i]+'; opacity: 0.8; }', sheet.cssRules.length);
     }
     coloresAcargar=coloresAcargar+"</p>"
      $("#mostrarMarcos").append(coloresAcargar);
@@ -155,9 +155,9 @@ function cargarPatillas(patilla){
     var coloresAcargar="<p>";
 	var sheet = window.document.styleSheets[3]; // para cargar el st al css de estilos
     for(i=0, len=colores.length; i<len; i++){
-        var str= "&#39;"+"st"+i+"&#39;";	// por las cmillas del onclick
+        var str= "&#39;"+"stp"+i+"&#39;";	// por las cmillas del onclick
         coloresAcargar+=' <button class="btn btn-sm" id=btnClr onclick="chngPatillas('+str+')" style="background-color:#'+colores[i]+';"></button>';
-		sheet.insertRule('.st'+i+' { fill: #'+colores[i]+'; opacity: 0.6; }', sheet.cssRules.length);
+		sheet.insertRule('.stp'+i+' { fill: #'+colores[i]+'; opacity: 0.8; }', sheet.cssRules.length);
     }
     coloresAcargar=coloresAcargar+"</p>"
      $("#mostrarPatillas").append(coloresAcargar);
