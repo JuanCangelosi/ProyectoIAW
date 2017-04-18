@@ -5,21 +5,47 @@
     src: local("Mohave"), url('../fonts/Mohave.otf') format("truetype");
 }
 
+@media screen and (max-device-width : 1920px){
+	#h_title {
+		font-size:60px;
+	 }
+	 
+	 #accordion h3{
+		font-size: 28px;
+	 }
+	 
+	 #panel_edicion{
+		font-size: 28px;
+	 }
+	 
+	 .btn, .btn-primary{
+	font-size: 28px;
+	}
+}
+
+@media screen and (max-device-width : 360px){
+	#h_title {
+		font-size:25px;
+	 }
+	 
+	 #accordion h3{
+		font-size: 14px;
+	 }
+	 
+	 #panel_edicion{
+		font-size: 14px;
+	 }
+	 
+	 .btn, .btn-primary{
+		font-size: 14px;
+	}
+
+}
+
 #logo{
 	width:	187px;
     height: 95px;
 }
-
-#navbar{
-	height:110px;
-}
-
-.navbar-header{
-	width:	187px;
-    height: 95px;
-	padding-top:0px;
-}
-
 
 .navbar-brand,
 .navbar-nav li a {
@@ -30,19 +56,18 @@
 }
 
 #hdr_container {
-	line-height:50px;
 	background-color:#2A2A2A;
 }
 
 
-#hdr_container h3{
+#h_title {
 	line-height:50px;
 	font-family:"Mohave";
 	text-align: center;
-	font-size:	60px;
-	word-spacing: 8px;
+	/*font-size:	60px;*/
+	/*word-spacing: 8px;*/
 	margin-top:	7px;
-	color:	white;
+	/*color:	white;*/
 	text-shadow: 0px 2px 0px rgba(255,255,255,.3), 0px -2px 0px rgba(0,0,0,.7);
 }
 
@@ -60,7 +85,6 @@
 
 #accordion h3{
 	font-family:"Mohave";
-	font-size: 28px;
 	background-color:#2A2A2A;
 	padding:15px 15px 15px 15px;
 	text-shadow: 0px 2px 0px rgba(255,255,255,.3), 0px -2px 0px rgba(0,0,0,.7);
@@ -97,9 +121,6 @@
 	/*background-color:#726958*/
 	margin:auto;
 	font-family:"Mohave";
-	font-size: 28px;
-	
-
 }
 
 #col_display_nombre{
@@ -130,9 +151,7 @@
 	display:inline;
 }
 
-.btn, .btn-primary{
-	font-size: 28px;
-}
+
 
 .btn:active{
 	position:relative;
@@ -178,3 +197,10 @@
 	
 }
 
+/*
+Para celulares
+
+*/
+.col-sm-12{
+	font-size:8px;
+}

@@ -30,7 +30,7 @@
   
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <a class="navbar-brand" href="#"><img src="images/Caniexlogo.png" id="logo" alt="logotipo Caniex"></a>
+      <a class="navbar-brand" href="#"><img class="img-responsive" src="images/Caniexlogo.png" id="logo" alt="logotipo Caniex"></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -59,25 +59,25 @@
 </nav>
 
 
-<div class="container-fluid demo4" id="hdr_container">
-  <h3>Personaliza tus anteojos online!</h3>
+<div class="container-fluid" id="hdr_container">
+  <h3 id="h_title">Personaliza tus anteojos online!</h3>
 </div>
-<br>
+
 
 	<!--	Comienza panel de , que contien en una columna la tabla de edicion, y en la segunda column la tabla
 		de muestreo-->
-	<div class="row container-fluid" id="panel_edicion">
+	<div class="row col-8 container-fluid" id="panel_edicion">
 	<br>
 	<!--	Comienza fila de edicion, que contien en una columna la tabla de edicion	-->
 	
-		<div class="col-md-3" id="table_acc"><br>
+		<div class="col-3 col-md-3 " id="table_acc"><br>
 		<!--
 			<ul class="nav nav-stackable">
 				<li role="presentation" class="active"><a href="#">Modelos</a></li>
 				<li role="presentation">-->
             
         <!-- Menu de seleccion de objetos, cada h3 es un colapsible que uestra el div inmediatamente debajo -->
-        <div class="col-md-12"><div class="col-md-12" id="accordion" >
+        <div class="col-3 col-md-12 "><div class="col-md-12" id="accordion" >
 
             <!-- Menu de seleccion de modelos-->
 		  <h3 data-toggle="collapse" href="#collapseModelo" aria-expanded="false" aria-controls="collapseModelo"><span class="caret-right" id="tab"></span>Modelos</h3>
@@ -128,12 +128,12 @@
 		<!--	termina columna acordeon	-->
 		<!--	comienza columna de muestreo	-->
 		
-		<div class="col-md-9" id="columna2">
+		<div class=" col-9 col-md-9" id="columna2">
 			<div class="row">
-				<div class="col-md-7" id="col_display_nombre">
+				<div class="col-4 col-md-7" id="col_display_nombre">
 					<p id="display_nombre">Modelo: <span id="display_nombreElegido"></span></p>
 				</div>
-				<div class="col-md-0 btn btn-info"><span class="glyphicon glyphicon-info-sign" alt="Detalle de anteojo elegido"aria-hidden="true"></span>
+				<div class="col-1 col-md-0 btn btn-info"><span class="glyphicon glyphicon-info-sign" alt="Detalle de anteojo elegido"aria-hidden="true"></span>
 				</div>
 			</div>
 			
