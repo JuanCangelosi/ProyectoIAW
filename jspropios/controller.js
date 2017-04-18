@@ -119,7 +119,7 @@ function cargarModelos(){
 }
 
 function cargarModelo(modelo){
-    var htmlACargar='<img src="images/muestra_modelos/min'+modelo.modelo+'.jpg" alt="Imagen de muestra de anteojos '+modelo.modelo+'" width="150" height="108" id="'+modelo.modelo+'" class="btnmodelo">';
+    var htmlACargar='<img src="images/muestra_modelos/min'+modelo.modelo+'.jpg" alt="Imagen de muestra de anteojos '+modelo.modelo+'" id="'+modelo.modelo+'" class="btnmodelo">';
     $("#mostrarModelo").append(htmlACargar);    
 }
 
