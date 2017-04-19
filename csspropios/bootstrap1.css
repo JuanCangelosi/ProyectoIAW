@@ -3264,7 +3264,7 @@ fieldset[disabled] .btn-success.focus {
 .btn-info.active.focus,
 .open > .dropdown-toggle.btn-info.focus {
   color: #ffffff;
-  background-color: #652287;
+  background-color:#CE780F;
   border-color: #4c1966;
 }
 .btn-info:active,
@@ -6920,4 +6920,21 @@ a.list-group-item-danger.active:focus {
 .jumbotron h5,
 .jumbotron h6 {
   color: #fff;
+}
+
+#hdr_container {
+	background-color:#2A2A2A;
+}
+
+
+#h_title {
+	text-shadow: 0px 2px 0px rgba(255,255,255,.3), 0px -2px 0px rgba(0,0,0,.7);
+}
+
+#accordion h3{
+	background-color:#2A2A2A;
+}
+
+#panel_edicion{
+	background-color:#FFFFFF;
 }

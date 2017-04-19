@@ -6768,3 +6768,19 @@ button.close {
     color: #fff;
   }
 }
+
+#hdr_container {
+	background-color:#000000;
+}
+
+#h_title {
+	text-shadow: 0px 2px 0px rgba(0,0,0,.3), 0px -2px 0px rgba(0,0,0,.7);
+}
+
+#accordion h3{
+	background-color:#E95420;
+}
+
+#panel_edicion{
+	background-color:#000000;
+}

@@ -137,7 +137,7 @@ function cargarVidrio(vidrio){
     $("#mostrarLentes").append("<p> "+vidrio.tipo+" </p>");
     var colores=vidrio.color;
     var coloresAcargar="<p>";
-	var sheet = window.document.styleSheets[3]; // para cargar el st al css de estilos
+	var sheet = getShtEstilo();
     for(i=0, len=colores.length; i<len; i++){
 		var str= "&#39;"+"stv"+i+"&#39;";	// por las cmillas del onclick
         coloresAcargar+=' <button class="btn btn-sm" id=btnClr onclick="chngClscLns('+str+')" style="background-color:#'+colores[i]+';"></button>';
@@ -150,7 +150,7 @@ function cargarVidrio(vidrio){
 function cargarMarco(marco){
     var colores=marco.color;
     var coloresAcargar="<p>";
-	var sheet = window.document.styleSheets[3]; // para cargar el st al css de estilos
+	var sheet = getShtEstilo();
     for(i=0, len=colores.length; i<len; i++){
 		var str= "&#39;"+"stm"+i+"&#39;";	// por las cmillas del onclick
         coloresAcargar+=' <button class="btn btn-sm" id=btnClr onclick="chngFront('+str+')" style="background-color:#'+colores[i]+';"></button>';
@@ -163,7 +163,7 @@ function cargarMarco(marco){
 function cargarPatillas(patilla){
     var colores=patilla.color;
     var coloresAcargar="<p>";
-	var sheet = window.document.styleSheets[3]; // para cargar el st al css de estilos
+	var sheet = getShtEstilo();
     for(i=0, len=colores.length; i<len; i++){
         var str= "&#39;"+"stp"+i+"&#39;";	// por las cmillas del onclick
         coloresAcargar+=' <button class="btn btn-sm" id=btnClr onclick="chngPatillas('+str+')" style="background-color:#'+colores[i]+';"></button>';
@@ -189,5 +189,8 @@ function chngFront(color){
 
 function chngPatillas(color){
     $("#temples").attr('class', color);
-    
+}
+
+function getShtEstilo(){
+	return document.getElementById("cssEstilo").sheet;
 }
