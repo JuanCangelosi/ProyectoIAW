@@ -46,9 +46,9 @@ function mostrarModelo(e){
         
         armar(lente_grafico);
         //habilitarOpciones(lente);
-        $("#display_nombreElegido").remove();
-        $("#display_nombre").append('<span id="display_nombreElegido">'+lente+'</span>');
 		chngClscLns('stv0');
+        
+        console.log("sali");
 		
     });
 	
@@ -61,13 +61,17 @@ function escribirModelo(e){
 }
 
 function escribirDetalle(e) {
+
     var lenteSeleccionado= e.currentTarget.id;
      $.getJSON("jspropios/caracteristicas.json", function(json) {
         var i = 0,
             termine = false,
             modelos = json.modelo;
-         while(i<modelos.length && !termine){
-             termine = (modelos[i].modelo == lenteSeleccionado);
+         while((i<modelos.length) && (!termine)){
+             termine = (modelos[i].modelo === lenteSeleccionado);
+             if(!termine){
+                 i++;
+             }
          }
          if(termine){
              console.log(modelos[i].detalle);
