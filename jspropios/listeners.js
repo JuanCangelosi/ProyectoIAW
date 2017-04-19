@@ -1,7 +1,9 @@
 //$(".btnmodelo").click(mostrarImagen);
 
 $('#mostrarModelo').on('click', '.btnmodelo', function(e){
-    modeloSeleccionado(e);
+    mostrarModelo(e);
+    escribirModelo(e);
+    escribirDetalle(e);
 });
 
 window.onload = function(){

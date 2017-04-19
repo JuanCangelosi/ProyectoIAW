@@ -1,7 +1,3 @@
-//$(".btnmodelo").click(mostrarImagen);
-
-//$(".btnLente").click();
-
 function armar(lente_grafico){ 
     $("#GlassesSVG").remove();
     $("#display_anteojos").append('<svg version="1.1" id="GlassesSVG" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 768 384" style="enable-background:new 0 0 768 384;" xml:space="preserve"> </svg> ')
@@ -40,17 +36,13 @@ function armar(lente_grafico){
 /*
     Recibe el evento y en base a este obtiene el id del boton presionado, con eso carga el json correspondiente para armar el lente
 */
-function modeloSeleccionado(e){
-    
-    console.log("Entre a mostrar la img");
+function mostrarModelo(e){
    
     var lente=e.currentTarget.id;
-    console.log(lente);
-    var myjson =$.getJSON("jspropios/"+lente+"Grafico.json", function(json) {
+    
+    $.getJSON("jspropios/"+lente+"Grafico.json", function(json) {
         
         var lente_grafico=json.lente_grafico;
-        
-        console.log(lente_grafico);
         
         armar(lente_grafico);
         //habilitarOpciones(lente);
@@ -59,13 +51,29 @@ function modeloSeleccionado(e){
 		chngClscLns('stv0');
 		
     });
-
-	//		Muestra en consola(para ver si anda	).
-	//console.log(document.getElementById("GlassesSVG"));
-	/*
-		Cada vez que apreten el boton de modelo va a crear el svg, habria que crear como boton  la image demuestra que si ya esta selccionada entonces no entra  a esta func
-	*/
 	
+}
+
+function escribirModelo(e){
+    var lente=e.currentTarget.id;
+    $("#display_nombreElegido").remove();
+    $("#display_nombre").append('<span id="display_nombreElegido">'+lente+'</span>');
+}
+
+function escribirDetalle(e) {
+    var lenteSeleccionado= e.currentTarget.id;
+     $.getJSON("jspropios/caracteristicas.json", function(json) {
+        var i = 0,
+            termine = false,
+            modelos = json.modelo;
+         while(i<modelos.length && !termine){
+             termine = (modelos[i].modelo == lenteSeleccionado);
+         }
+         if(termine){
+             console.log(modelos[i].detalle);
+         }
+     }
+               );
 }
 
 function habilitarOpciones(lente){
@@ -77,9 +85,7 @@ function cargarModelos(){
     
     //accedo a al json que posee los elemento a cargar en el html
    
-     var myjson =$.getJSON("jspropios/caracteristicas.json", function(json) {
-        
-          console.log(json);
+     $.getJSON("jspropios/caracteristicas.json", function(json) {
          //si logre entrar
          
          //cargo los modelos de lentes
@@ -168,13 +174,6 @@ function cargarTamano(tamano){
     $("#mostrarTamano").append(tamanosAcargar);
     
 }
-/*function lenteRojo(e){
-    
-    $("#lns").attr('class','st1');
-    var caller = e.target || e.srcElement;
-    console.log( caller.id );
-    //$("#lens_l").setAttributeNS(null,"class","st1");;
-}*/
 
 function chngClscLns(color){
 	$("#lns").attr('class', color);
