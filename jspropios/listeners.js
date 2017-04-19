@@ -1,6 +1,8 @@
 //$(".btnmodelo").click(mostrarImagen);
 
-$('#mostrarModelo').on('click', '.btnmodelo', modeloSeleccionado);
+$('#mostrarModelo').on('click', '.btnmodelo', function(e){
+    modeloSeleccionado(e);
+});
 
 window.onload = function(){
     cargarModelos();
