@@ -1,10 +1,14 @@
 //$(".btnmodelo").click(mostrarImagen);
 
 $('#mostrarModelo').on('click', '.btnmodelo', function(e){
-    mostrarModelo(e);
-    escribirModelo(e);
-    escribirDetalle(e);
+    var lente=e.currentTarget.id;
+    mostrarModelo(lente);
+    escribirModelo(lente);
+    escribirDetalle(lente);
+    setModeloGuardado(lente);
 });
+
+//$("#btnRandom").click(mostrarPrecargadoRandom());
 
 window.onload = function(){
     cargarModelos();

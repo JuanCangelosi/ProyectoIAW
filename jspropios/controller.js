@@ -36,9 +36,7 @@ function armar(lente_grafico){
 /*
     Recibe el evento y en base a este obtiene el id del boton presionado, con eso carga el json correspondiente para armar el lente
 */
-function mostrarModelo(e){
-   
-    var lente=e.currentTarget.id;
+function mostrarModelo(lente){
     
     $.getJSON("jspropios/"+lente+"Grafico.json", function(json) {
         
@@ -47,22 +45,39 @@ function mostrarModelo(e){
         armar(lente_grafico);
         //habilitarOpciones(lente);
 		chngClscLns('stv0');
-        
-        console.log("sali");
 		
     });
 	
 }
 
-function escribirModelo(e){
-    var lente=e.currentTarget.id;
+function mostrarPrecargadoRandom(){
+
+    $.getJSON("jspropios/caracteristicas.json", function(json) {
+        var randomModelo = Math.floor((Math.random() * json.modelo.length));
+        var randomColorLente = Math.floor((Math.random() * json.vidrio[0].color.length));
+        var randomColorMarco = Math.floor((Math.random() * json.marco[0].color.length));
+        var randomColorPatilla = Math.floor((Math.random() * json.patillas[0].color.length));
+        var modeloSeleccionado= json.modelo[randomModelo];
+        mostrarModelo(modeloSeleccionado.modelo);
+        if(randomColorLente<10)
+            chngClscLns('stv0'+randomColorLente);
+        else
+           chngClscLns('stv'+randomColorLente);
+        
+        chngFront('stm'+randomColorMarco);
+        chngPatillas('stp'+randomColorPatilla);
+    
+    }
+              );
+    
+}
+
+function escribirModelo(lente){
     $("#display_nombreElegido").remove();
     $("#display_nombre").append('<span id="display_nombreElegido">'+lente+'</span>');
 }
 
-function escribirDetalle(e) {
-
-    var lenteSeleccionado= e.currentTarget.id;
+function escribirDetalle(lenteSeleccionado) {
      $.getJSON("jspropios/caracteristicas.json", function(json) {
         var i = 0,
             termine = false,
@@ -80,9 +95,30 @@ function escribirDetalle(e) {
                );
 }
 
-function habilitarOpciones(lente){
-    
-    
+function guardarDatos(e) {
+    /* var lenteSeleccionado= e.currentTarget.id;
+    $.getJSON("jspropios/caracteristicas.json", function(json) {
+        var i = 0,
+            termine = false,
+            modelos = json.modelo;
+         while((i<modelos.length) && (!termine)){
+             termine = (modelos[i].modelo === lenteSeleccionado);
+             if(!termine){
+                 i++;
+             }
+         }
+        if(termine){
+            modeloAGuardar.es_especial = "NO";
+            modeloAGuardar.modelo = lenteSeleccionado;
+            modeloAGuardar.precio_base = modelos[i].precio_base;
+            modeloAGuardar.detalle = modelos[i].detalle;
+            modeloAGuardar.vidrio.tipo = 
+         }
+    }
+              );
+              
+              
+              */
 }
 
 function cargarModelos(){
