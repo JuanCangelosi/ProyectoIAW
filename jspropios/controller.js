@@ -1,4 +1,7 @@
-
+/*
+    Funcion encargada de armar el SVG de los Lentes
+    Recibe un JSON con la informacion grafica del lente a armar y en base a eso agrega los atributos al SVG
+*/
 
 function armar(lente_grafico){ 
     $("#GlassesSVG").remove();
@@ -36,7 +39,9 @@ function armar(lente_grafico){
 }
 
 /*
-    Recibe el evento y en base a este obtiene el id del boton presionado, con eso carga el json correspondiente para armar el lente
+    Recibe un nombre de lente, un color de vidrio, un color de marco y un color de patilla y prepara la obtencion de los datos para el armado
+    del lente y el seteo de atributos correspondientes.
+    Si lns front o patilla son nulos se setea el estilo 0 como predeterminado.
 */
 function mostrarModelo(lente, lns, front, patilla){
     
@@ -63,6 +68,9 @@ function mostrarModelo(lente, lns, front, patilla){
 	
 }
 
+/* 
+    Elije un modelo random con colores random en cada componente.
+*/
 function mostrarPrecargadoRandom(){
 
     $.getJSON("jspropios/caracteristicas.json", function(json) {
@@ -78,12 +86,19 @@ function mostrarPrecargadoRandom(){
               );
     
 }
+/*
+    Escribe en el documento HTML el nombre del lente
+*/
 
 function escribirModelo(lente){
     $("#display_nombreElegido").remove();
-    $("#display_nombre").append('<span id="display_nombreElegido">'+lente+'</span>');
+    var lenteParseado= lente.replace("_", " ");
+    $("#display_nombre").append('<span id="display_nombreElegido">'+lenteParseado+'</span>');
 }
 
+/*
+    Agrega al detalle del documento HTML la informacion del lente seleccionado
+*/
 function escribirDetalle(lenteSeleccionado) {
      $.getJSON("jspropios/caracteristicas.json", function(json) {
         var i = 0,
@@ -102,6 +117,11 @@ function escribirDetalle(lenteSeleccionado) {
      }
                );
 }
+
+/*
+    Guarda en localStorage un json con la informacion del lente seleccionado
+    TODO
+*/
 
 function guardarDatos(e) {
     /* var lenteSeleccionado= e.currentTarget.id;
@@ -129,7 +149,10 @@ function guardarDatos(e) {
               */
 }
 
-function cargarModelos(){
+/*
+    Carga las opciones almacenadas en el json Caracteristicas al documento HTML
+*/
+function cargarOpciones(){
     
     //accedo a al json que posee los elemento a cargar en el html
    
@@ -172,11 +195,17 @@ function cargarModelos(){
         
 }
 
+/*  
+    Carga los modelos al documento HTML
+*/
 function cargarModelo(modelo){
     var htmlACargar='<img src="images/muestra_modelos/min'+modelo.modelo+'.jpg" alt="Imagen de muestra de anteojos '+modelo.modelo+'" id="'+modelo.modelo+'" class="btnmodelo">';
     $("#mostrarModelo").append(htmlACargar);    
 }
 
+/*  
+    Carga los vidrios al documento HTML
+*/
 function cargarVidrio(vidrio){
     $("#mostrarLentes").append("<p> "+vidrio.tipo+" </p>");
     var colores=vidrio.color;
@@ -191,6 +220,9 @@ function cargarVidrio(vidrio){
      $("#mostrarLentes").append(coloresAcargar);
 }
 
+/*  
+    Carga los marcos al documento HTML
+*/
 function cargarMarco(marco){
     var colores=marco.color;
     var coloresAcargar="<p>";
@@ -205,6 +237,10 @@ function cargarMarco(marco){
      $("#mostrarMarcos").append(coloresAcargar);
 }
 
+/*  
+    Carga las Patillas al documento HTML
+*/
+
 function cargarPatillas(patilla){
     var colores=patilla.color;
     var coloresAcargar="<p>";
@@ -218,24 +254,40 @@ function cargarPatillas(patilla){
      $("#mostrarPatillas").append(coloresAcargar);
 }
 
+/*  
+    Carga los tamaños al documento HTML
+*/
+
 function cargarTamano(tamano){
      var tamanosAcargar='<button class="btn btn-sm" id=btnClr>' + tamano.medida+ '</button>';
     $("#mostrarTamano").append(tamanosAcargar);
     
 }
 
+/*  
+    Cambia el color del lente al seleccionado
+*/
 function chngClscLns(color){
 	$("#lns").attr('class', color);
 }
 
+/*  
+    Cambia el color del marco al seleccionado
+*/
 function chngFront(color){
     $("#front").attr('class', color);
 }
 
+/*  
+    Cambia el color de las patillas al seleccionado 
+*/
 function chngPatillas(color){
     $("#temples").attr('class', color);
 }
 
+/*  
+    Devuelve la hoja de estilos del CSSEstilo, donde estan los estilos de los lentesgraficos
+*/
 function getShtEstilo(){
 	return document.getElementById("cssEstilo").sheet;
 }

@@ -1,17 +1,16 @@
-//$(".btnmodelo").click(mostrarImagen);
 
 $('#mostrarModelo').on('click', '.btnmodelo', function(e){
     var lente=e.currentTarget.id;
     mostrarModelo(lente);
     escribirModelo(lente);
     escribirDetalle(lente);
-   // setModeloGuardado(lente);
+   // setModeloGuardado(lente); A implementar
 });
 
 $("#btnRandom").click(mostrarPrecargadoRandom);
 
 window.onload = function(){
-    cargarModelos();
+    cargarOpciones();
     var mycookie = getCookie("css");
     if(mycookie != ""){
         setCSS(mycookie);
@@ -31,4 +30,21 @@ function getCookie(cname) {
         }
     }
     return "";
+}
+
+$("#tema").click(cambiarCSS);
+
+function cambiarCSS(e){
+    var addressValue = $("#cssPropio").attr("href");
+    if(addressValue.includes("1")){
+        setCSS("csspropios/bootstrap2.css");
+    }
+    else{
+        setCSS("csspropios/bootstrap1.css");
+    }
+}
+
+function setCSS(direccion){
+    $("#cssPropio").attr('href', direccion);
+    document.cookie = "css="+direccion+"; expires= Fri, 31 Dec 9999 23:59:59 GMT";
 }
