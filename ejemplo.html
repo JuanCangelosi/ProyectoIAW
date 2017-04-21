@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Caniex™ Anteojos</title>
-	<link rel="shortcut icon" type="images/Caniexlogo.png" href="images/Caniexlogo.png" />
+	<link rel="shortcut icon" type="images/CaniexIcon.png" href="images/CaniexIcon.png" />
 	<!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 	
@@ -34,11 +34,12 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-          <li id="btnRandom">Cargar </li>
+
+      <ul class="navbar-brand">
+           <button class="btn btn-outline-success my-2 my-sm-0" id="btnRandom" onclick="mostrarPrecargadoRandom()">Cargar Random </button>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li id="tema"><a href="#">Cambiar Tema</a></li>
+        <button class="btn btn-outline-success my-2 my-sm-0" id="tema">Cambiar Tema</button>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -104,7 +105,7 @@
             
             <!-- Menu de seleccion de tamaños-->
 		  <h3 data-toggle="collapse" href="#collapseTamanos" aria-expanded="false" aria-controls="collapseTamanos"><span class="caret-right" id="tab"></span>Tamaño</h3>
-		  <div class="collapse " id="collapseTamanos">
+		  <div class="collapse" id="collapseTamanos">
 			 <p id="mostrarTamano">
 			</p>
 		  </div>
@@ -119,7 +120,8 @@
 				<div class="col-4 col-md-7" id="col_display_nombre">
 					<p id="display_nombre">Modelo: <span id="display_nombreElegido"></span></p>
 				</div>
-				<div class="col-1 col-md-0 btn btn-info"><span class="glyphicon glyphicon-info-sign" alt="Detalle de anteojo elegido"aria-hidden="true"></span>
+				<div class="col-1 col-md-0 btn btn-info btn-dropdown"><span class="glyphicon glyphicon-info-sign" alt="Detalle de anteojo elegido"aria-hidden="true"></span>
+					  <div class="btn-dropdown-content" id="detalle_lente"><span id="texto_detalle">No hay anteojo seleccionado</span></div>
 				</div>
 			</div>
 			

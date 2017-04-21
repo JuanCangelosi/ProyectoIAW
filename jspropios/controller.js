@@ -85,6 +85,8 @@ function escribirDetalle(lenteSeleccionado) {
              }
          }
          if(termine){
+			 $("#texto_detalle").remove();
+			 $("#detalle_lente").append('<span id="texto_detalle">'+modelos[i].detalle+'</span>')
              console.log(modelos[i].detalle);
          }
      }
