@@ -63,6 +63,8 @@ function mostrarPrecargadoRandom(){
         var randomColorPatilla = Math.floor((Math.random() * json.patillas[0].color.length));
         var modeloSeleccionado= json.modelo[randomModelo];
         mostrarModelo(modeloSeleccionado.modelo, 'stv'+randomColorLente, 'stm'+randomColorMarco, 'stp'+randomColorPatilla);
+		escribirModelo(modeloSeleccionado.modelo);
+		escribirDetalle(modeloSeleccionado.modelo);
     }
               );
     
