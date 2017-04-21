@@ -6933,8 +6933,37 @@ a.list-group-item-danger.active:focus {
 
 #accordion h3{
 	background-color:#2A2A2A;
+	text-shadow: 0px 2px 0px rgba(255,255,255,.3), 0px -2px 0px rgba(0,0,0,.7);
 }
 
 #panel_edicion{
 	background-color:#FFFFFF;
+}
+
+#btnClr{
+	border-color:	black;
+}
+
+.caret-right{
+	border-left-color:#FFFFFF;
+}
+
+#btnRandom{
+	color-background:black;
+}
+
+.navbar-right{
+	color-background:black;
+}
+
+#btnRandom:hover{
+	color:#2A2A2A;
+}
+
+#tema:hover{
+	color:#2A2A2A;
+}
+
+#display_anteojos{
+	background:	#E8E8E8;
 }
