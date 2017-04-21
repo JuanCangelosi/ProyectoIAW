@@ -242,9 +242,13 @@ Para celulares
 	font-size:16px;
 	display:block;
     width:230px;
-    word-break:break-all;
+    word-break: keep-all;
 }
 
 .btn-dropdown:hover .btn-dropdown-content {
     display: block;
+}
+
+#display_nombre{
+	color:black;
 }

@@ -46,9 +46,18 @@ function mostrarModelo(lente, lns, front, patilla){
         
         armar(lente_grafico);
         //habilitarOpciones(lente);
-		chngClscLns(lns);
-        chngFront(front);
-        chngPatillas(patilla);
+		if(lns)
+			chngClscLns(lns);
+		else
+			chngClscLns('stv0');
+		if(front)
+			chngFront(front);
+		else
+			chngFront('stm0');
+		if(patilla)
+			chngPatillas(patilla);
+		else
+			chngPatillas('stp0');
 		
     });
 	
@@ -89,7 +98,6 @@ function escribirDetalle(lenteSeleccionado) {
          if(termine){
 			 $("#texto_detalle").remove();
 			 $("#detalle_lente").append('<span id="texto_detalle">'+modelos[i].detalle+'</span>')
-             console.log(modelos[i].detalle);
          }
      }
                );

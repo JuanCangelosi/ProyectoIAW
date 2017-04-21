@@ -6797,10 +6797,6 @@ button.close {
 	border-left-color:#000000;
 }
 
-.p{
-	color:white;
-}
-
 #btnRandom:hover{
 	color:black;
 }
@@ -6817,3 +6813,9 @@ button.close {
 	background:	white;
 
 }
+
+p{
+	color:white;
+}
+
+
