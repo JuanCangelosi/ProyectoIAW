@@ -5,10 +5,10 @@ $('#mostrarModelo').on('click', '.btnmodelo', function(e){
     mostrarModelo(lente);
     escribirModelo(lente);
     escribirDetalle(lente);
-    setModeloGuardado(lente);
+   // setModeloGuardado(lente);
 });
 
-//$("#btnRandom").click(mostrarPrecargadoRandom());
+$("#btnRandom").click(mostrarPrecargadoRandom);
 
 window.onload = function(){
     cargarModelos();

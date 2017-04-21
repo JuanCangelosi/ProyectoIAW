@@ -1,3 +1,5 @@
+
+
 function armar(lente_grafico){ 
     $("#GlassesSVG").remove();
     $("#display_anteojos").append('<svg version="1.1" id="GlassesSVG" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 768 384" style="enable-background:new 0 0 768 384;" xml:space="preserve"> </svg> ')
@@ -36,7 +38,7 @@ function armar(lente_grafico){
 /*
     Recibe el evento y en base a este obtiene el id del boton presionado, con eso carga el json correspondiente para armar el lente
 */
-function mostrarModelo(lente){
+function mostrarModelo(lente, lns, front, patilla){
     
     $.getJSON("jspropios/"+lente+"Grafico.json", function(json) {
         
@@ -44,7 +46,9 @@ function mostrarModelo(lente){
         
         armar(lente_grafico);
         //habilitarOpciones(lente);
-		chngClscLns('stv0');
+		chngClscLns(lns);
+        chngFront(front);
+        chngPatillas(patilla);
 		
     });
 	
@@ -58,15 +62,7 @@ function mostrarPrecargadoRandom(){
         var randomColorMarco = Math.floor((Math.random() * json.marco[0].color.length));
         var randomColorPatilla = Math.floor((Math.random() * json.patillas[0].color.length));
         var modeloSeleccionado= json.modelo[randomModelo];
-        mostrarModelo(modeloSeleccionado.modelo);
-        if(randomColorLente<10)
-            chngClscLns('stv0'+randomColorLente);
-        else
-           chngClscLns('stv'+randomColorLente);
-        
-        chngFront('stm'+randomColorMarco);
-        chngPatillas('stp'+randomColorPatilla);
-    
+        mostrarModelo(modeloSeleccionado.modelo, 'stv'+randomColorLente, 'stm'+randomColorMarco, 'stp'+randomColorPatilla);
     }
               );
     
@@ -193,6 +189,7 @@ function cargarMarco(marco){
 		sheet.insertRule('.stm'+i+' { fill: #'+colores[i]+'; opacity: 1; }', sheet.cssRules.length);
     }
     coloresAcargar=coloresAcargar+"</p>"
+    
      $("#mostrarMarcos").append(coloresAcargar);
 }
 
